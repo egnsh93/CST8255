@@ -1,0 +1,32 @@
+CACHE MANIFEST
+# Shane Egan
+# Web Imaging Final
+# 2015-04-16:v1
+
+CACHE:
+index.html
+css/normalize.css
+css/styles.css
+images/game/invader_state_down.png
+images/game/invader_state_up.png
+images/game/ship.png
+images/body_bg.jpg
+images/footer_invader_left.png
+images/footer_invader_right.png
+images/header_bg.jpg
+js/jquery-1.10.2.js
+js/jquery-ui.js
+js/DetectCollision.js
+js/DetectKey.js
+js/Game.js
+js/ImageAsset.js
+js/Invader.js
+js/Main.js
+js/Missile.js
+js/Ship.js
+http://fonts.googleapis.com/css?family=Lato:300,400,700
+http://fonts.googleapis.com/css?family=Roboto:900
+
+NETWORK:
+http://playdoh.algonquincollege.com/lts/mike/WebServices/MessageService.asmx/GetScores
+*

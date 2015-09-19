@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html manifest="site.appcache">
+
+<head>
+    <title>Space Invaders</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:900' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+    <div class="siteWrap">
+        <header>
+            <div class="container">
+                <a href="javascript: void(0);" class="siteTitle">Simple <span>Games</span>
+                </a>
+                <nav class="menuWrap">
+                    <ul>
+                        <li><a href="javascript: void(0);">Games</a>
+                        </li>
+                        <li><a href="javascript: void(0);">About</a>
+                        </li>
+                        <li><a href="javascript: void(0);">FAQ</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="contentWrap">
+            <div class="contentWrapInner">
+                <div class="container">
+                    <div class="logo">
+                        <span class="skewXRight">Invaders</span> From <span class="skewXLeft">Space</span>
+                    </div>
+                    <canvas id="gameScreen" width="450" height="502">
+                        Your browser does not support HTML5 canvas
+                    </canvas>
+
+                    <div id="tabWrap">
+                        <div id="tabs">
+                            <ul>
+                                <li><a href="#tab-game">Game</a>
+                                </li>
+                                <li><a href="#tab-scores">Scores</a>
+                                </li>
+                            </ul>
+                            <div id="tab-game" class="tab-content">
+                                <div class="tab-content-instructions">
+                                    <h2>Instructions</h2>
+                                    <p>Destroy enemy invaders before they reach the ground.
+                                        <br>Watch out for enemy fire!</p>
+                                </div>
+                                <div class="tab-content-controls">
+                                    <h2>Controls</h2>
+                                    <p>A - Move Left
+                                        <br>D - Move Right
+                                        <br>Enter - Fire</p>
+                                </div>
+                            </div>
+                            <div id="tab-scores" class="tab-content">
+                                <div class="scores-name">
+                                    <h2>Name</h2>
+                                </div>
+
+                                <div class="scores-score">
+                                    <h2>Score</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="aboveFooterWrap">
+            <div class="aboveFooterWrapInner">
+                <img src="images/footer_invader_left.png" alt="Invader Left">
+                <img src="images/footer_invader_right.png" alt="Invader Right">
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <p>&copy; 2015 Simple Games Inc.</p>
+                <p>Final Assignment by Shane Egan</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/DetectKey.js"></script>
+    <script src="js/DetectCollision.js"></script>
+    <script src="js/Invader.js"></script>
+    <script src="js/ImageAsset.js"></script>
+    <script src="js/Missile.js"></script>
+    <script src="js/Ship.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/Main.js"></script>
+
+</body>
+
+</html>
