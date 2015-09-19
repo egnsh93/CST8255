@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab 7 - jQuery Image Gallery</title>
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript">
+        var currentImageID;
+        
+        $(function () {
+            console.log("Document Ready!");
+
+            // Iterate through image array
+            for (var i = 0; i < images.length; i++) {
+                // Create thumbnail elements
+                var thumbnail = $('<div>');
+                var image = $('<img>');
+                
+                // Add thumbnail class and image source
+                thumbnail.addClass('thumbnail');
+                image.attr('src', images[i]);
+                
+                // Add thumbnail data id attribute
+                image.attr('data-id', i);
+
+                // Append image to thumbnail div and holder
+                thumbnail.append(image);
+                thumbnail.appendTo('#thumbnails');
+
+                // Apply fade in effect to the thumbnail
+                thumbnail.css('opacity', 0.0);
+                thumbnail.fadeTo(2000 + i * 500, 0.5, function () {
+                    $(this).click(onThumbClick);
+                    $(this).css('cursor', 'pointer');
+                });
+            }
+
+            // Apply fade in to message text
+            $('#message').fadeTo(2000 + images.length * 500, 1.0);
+
+        });
+
+        function onThumbClick() {
+            
+            // Get instance of clicked image element
+            var image = $(this).find('img');
+            
+            // Get the imageHolder object
+            var imageHolder = $('#imageHolder');
+
+            // Clear existing image before adding clone
+            var currentImage = imageHolder.find('img');
+            
+            if (image.attr('data-id') != currentImage.attr('data-id'))
+            {
+                // Clone image instance and add class
+                var clone = image.clone();
+                clone.addClass('thumbClone');
+                
+                // Add the clicked image as the current image
+                imageHolder.append(clone);
+
+                // Animate the image on fade in
+                clone.animate({
+                    'max-width': '400px',
+                    'max-height': '400px',
+                    'margin-top': '0px',
+                    opacity: 1
+                }, 1000);
+
+                // Animate the image on fade out
+                currentImage.animate({
+                    opacity: 0,
+                    width: 0,
+                    height: 0
+                }, 1000, function () {
+                    $(this).remove();
+                });
+
+                // Highlight the selected thumbnail by adding the selected class
+                $('.thumbnail').removeClass('selected');
+                $(this).addClass('selected');
+            }
+
+        }
+    </script>
+
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            color: black;
+            font-size: 16px;
+            font-family: 'Special Elite', cursive;
+        }
+        
+        .allContent {
+            min-width: 1000px;
+            min-height: 600px;
+            background: url(images/tree.png) top left no-repeat, radial-gradient( 1000px 500px ellipse at top center, #ccc, #fff) no-repeat, #fff;
+        }
+        
+        .rightContent {
+            width: 600px;
+            padding-top: 20px;
+            margin-left: auto;
+        }
+        
+        header {
+            font-size: 1.6em;
+            font-family: 'Condiment', cursive;
+        }
+        
+        #imageHolder {
+            min-height: 430px;
+        }
+        
+        #thumbnails {
+            text-align: center;
+        }
+        
+        .thumbnail {
+            display: inline-block;
+            width: 125px;
+            height: 125px;
+            line-height: 125px;
+            background: #fff;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        .thumbnail img {
+            max-width: 100px;
+            min-width: 100px;
+            vertical-align: middle;
+        }
+        
+        .selected {
+            width: 150px;
+            height: 150px;
+            line-height: 150px;
+            opacity: 1.0 !important;
+        }
+        
+        .selected img {
+            max-width: 125px;
+            min-width: 125px;
+            vertical-align: middle;
+        }
+        
+        #message {
+            text-align: center;
+            opacity: 0;
+        }
+        
+        .thumbClone {
+            /*Animate these*/
+            
+            max-width: 150px;
+            max-height: 150px;
+            opacity: 0;
+            /*Not animated values*/
+            
+            z-index: 1;
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 400px auto 0px auto;
+            border: 10px solid white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="allContent">
+        <div class="rightContent">
+            <header>
+                jQuery Image Gallery
+            </header>
+            <p>
+                This wonderous image gallery is implemented with jQuery. It's all interesting and exciting!
+            </p>
+        </div>
+        <div id="imageHolder">
+
+        </div>
+        <div id="thumbnails">
+        </div>
+        <div id="message">
+            <p>
+                Click on an image to see the larger version
+            </p>
+        </div>
+    </div>
+
+    <script>
+        //List of image sources
+        var images = [
+                'images/img1.jpg',
+                'images/img2.jpg',
+                'images/img3.jpg',
+                'images/img4.jpg',
+                'images/img5.jpg',
+                'images/img6.jpg',
+                'images/img7.jpg',
+                'images/img8.jpg'];
+    </script>
+</body>
+
+</html>

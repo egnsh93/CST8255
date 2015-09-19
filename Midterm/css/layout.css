@@ -1,0 +1,234 @@
+/*---------------------------------------
+ * General Styles
+ *---------------------------------------*/
+body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Inconsolata;
+    color: #fff;
+    font-weight: 400;
+    overflow-x: hidden;
+    background: url(../images/background.jpg) center center repeat fixed;
+}
+
+.clear
+{
+    clear: both;
+}
+
+/*---------------------------------------
+ * Layout Styles
+ *---------------------------------------*/
+#container
+{
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar
+{
+    position: fixed;
+    top: 30px; left: 0;
+    width: 449px;
+    height: 598px;
+    padding-left: 50px;
+    z-index: 9999;
+    color: #cecece;
+    background: url(../images/fixed_bg.png) no-repeat;
+}
+
+.logoWrap
+{
+    padding-top: 17px;
+    padding-left: 141px;
+}
+
+nav ul
+{
+    padding: 0;
+    list-style-type:  none;
+}
+
+nav ul li
+{
+    float: left;
+    width: 53px;
+    height: 53px;
+    padding: 11px 11px 11px 11px;
+    margin-left: 33px;
+    background: url(../images/button.png) no-repeat;
+}
+
+nav ul li:first-child
+{
+    margin-left: 0;
+}
+
+.content
+{
+    padding-right: 49px;
+}
+
+.description
+{
+    margin: 7px 0 40px 0;
+    display: block;
+    text-align: center;
+}
+
+
+#contentWrap
+{
+    position: relative;
+    padding-left: 689px;
+    min-width: 506px;
+}
+
+#contentWrapInner
+{
+    position: absolute;
+    top: 50px;
+    right: 120px;
+}
+
+.delta
+{
+    position: relative;
+    width: 506px;
+    height: 280px;
+    margin-bottom: 400px;
+    background: url(../images/content_planet_delta.png) no-repeat;
+}
+
+.delta .planet_title
+{
+    position: absolute;
+    top: -3px; left: 0;
+}
+
+.delta .planet_desc
+{
+    position: absolute;
+    top: 37px; left: 0;
+    width: 230px;
+}
+
+.omega
+{
+    position: relative;
+    width: 460px;
+    height: 219px;
+    margin-bottom: 400px;
+    background: url(../images/content_planet_omega.png) no-repeat;
+}
+
+.omega .planet_title
+{
+    position: absolute;
+    top: -48px; right: 0;
+}
+
+.omega .planet_desc
+{
+    position: absolute;
+    top: -8px; right: 0;
+    width: 230px;
+    text-align: right;
+}
+
+.hades
+{
+    position: relative;
+    width: 470px;
+    height: 179px;
+    margin-bottom: 400px;
+    background: url(../images/content_planet_hades.png) no-repeat;
+}
+
+.hades .planet_title
+{
+    position: absolute;
+    top: -45px; left: 0;
+}
+
+.hades .planet_desc
+{
+    position: absolute;
+    top: -7px; left: 0;
+    width: 230px;
+}
+
+.ultron
+{
+    position: relative;
+    width: 486px;
+    height: 218px;
+    margin-bottom: 400px;
+    background: url(../images/content_planet_ultron.png) no-repeat;
+}
+
+.ultron .planet_title
+{
+    position: absolute;
+    top: -31px; left: 0;
+}
+
+.ultron .planet_desc
+{
+    position: absolute;
+    top: 5px; left: 0;
+    width: 230px;
+}
+
+#audioWrap
+{
+    position: fixed;
+    bottom: 0; right: 0;
+    width: 133px;
+    height: 23px;
+    background-color: #3d413c;
+    border-top: 2px solid #353934;
+    border-left: 2px solid #353934;
+    border-top-left-radius: 10px;
+}
+
+.audioLabel
+{
+    float: left;
+    width: 67px;
+    height: 21px;
+    padding-top: 2px;
+    text-align: center;
+    font-size: 13px;
+    border-top-left-radius: 10px;
+    background-color: #0e0f0d;
+}
+
+.audioControls
+{
+    font-size: 13px;   
+}
+
+.audioControls span
+{
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px 0 5px 12px;
+}
+
+h1
+{
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-weight: normal !important;
+}
+
+p
+{
+    font-size: 16px;
+}

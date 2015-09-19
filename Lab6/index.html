@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 6</title>
+
+        <!-- FONTS -->
+        <link href='http://fonts.googleapis.com/css?family=Vampiro+One' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
+
+        <style>
+            header {
+                color:white;
+                text-align: left;
+                padding: 10px;
+                top:10px;
+                font-size: 24px;
+                width: 960px;
+                margin: auto;
+                background: #000;
+                position:relative;
+                z-index:2;
+        
+                /*Apply a gradient background*/
+                background: #76afdc; /* Old browsers */
+                background: -moz-linear-gradient(top, #76afdc 0%, #2e67ac 100%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#76afdc), color-stop(100%,#2e67ac)); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top, #76afdc 0%,#2e67ac 100%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top, #76afdc 0%,#2e67ac 100%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(top, #76afdc 0%,#2e67ac 100%); /* IE10+ */
+                background: linear-gradient(to bottom, #76afdc 0%,#2e67ac 100%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76afdc', endColorstr='#2e67ac',GradientType=0 ); /* IE6-9 */
+                
+                /*Round the corners*/
+                border-radius: 10px;
+                
+                /*Add an outter glow*/
+                box-shadow: 0px 0px 10px #000;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Vampiro One', cursive;
+            }
+
+            body {
+                color:#333;
+                font-family: 'Advent Pro', sans-serif;
+                background: #ccc;
+                margin:0px;
+                padding:0px;
+            }
+
+            .mainContent {
+                width: 960px;
+                margin: auto;
+            }
+
+            #banner{
+                height:300px;
+                background: #333;
+                margin:0px;
+                position:relative;
+                text-align:center;
+                border-bottom:1px solid #333;
+            }
+
+            #banner img{
+                position:absolute;
+                top:0px;
+                left:calc( 50% - 900px ); /*Center the images horizontally  (note that images are 1800px wide - hence the 900px )*/
+                z-index:1;
+            }
+
+            #textHolder{
+                width:960px;
+                height:300px;
+                margin:auto;
+                left:0px;
+                right:0px;
+                position:absolute;
+                bottom:0px;
+            }
+
+            #bannerText{
+                position:absolute;
+                z-index:3;
+                text-align:right;
+                width:500px;
+                right:0px;
+                bottom:0px;
+
+                color:white;
+                font-size:50px;
+                padding-bottom:30px;
+                margin:0px;
+
+                /*Apply a text shadow to make sure it stands out on light backgrounds*/
+                text-shadow: 1px 1px #000;
+            }
+
+            .columns article{
+                float:left;
+                width:310px;
+                margin:0px;
+                padding:0px;
+            }
+
+            #middleColumn {
+                margin: 0px 15px;
+            }
+
+            footer{
+                clear:both;
+                text-align:center;
+                padding-top:30px;
+                font-size:10px;
+                letter-spacing:4px;
+            }
+
+        </style>
+
+        <!-- Animation -->
+        <style>
+            /* Create 2 animations one to show the text, one to hide it */
+        </style>
+    </head>
+    <body>
+        <div id="banner">
+            <header>
+                Transitions Inc.
+            </header>
+            <img id="img1" src="images/bg1.jpg" alt="Banner 1" />
+            <img id="img2" src="images/bg2.jpg" alt="Banner 2" />
+            <img id="img3" src="images/bg3.jpg" alt="Banner 3" />
+
+            <div id="textHolder">
+                <p id="bannerText">
+                    Animations and More!
+                </p>
+            </div>
+            
+        </div>
+        <div class="mainContent">
+            <div class="columns">
+                <article>
+                    <h3>
+                        Header 1
+                    </h3>
+                    <p>
+                        Bacon ipsum dolor sit amet minim strip steak short loin, dolore porchetta beef pork belly frankfurter turkey velit ribeye doner sed sint laboris. In short loin shankle quis turkey ut ea corned beef pork loin jerky. Frankfurter quis exercitation, sirloin cupidatat beef tail. Hamburger tail officia shank elit pork loin dolore irure shoulder bacon duis.
+                    </p>
+                </article>
+                <article id="middleColumn">
+                    <h3>
+                        Header 2
+                    </h3>
+                    <p>
+                        Bacon ipsum dolor sit amet minim strip steak short loin, dolore porchetta beef pork belly frankfurter turkey velit ribeye doner sed sint laboris. In short loin shankle quis turkey ut ea corned beef pork loin jerky. Frankfurter quis exercitation, sirloin cupidatat beef tail. Hamburger tail officia shank elit pork loin dolore irure shoulder bacon duis.
+                    </p>
+                </article>
+                <article>
+                    <h3>
+                        Header 3
+                    </h3>
+                    <p>
+                        Bacon ipsum dolor sit amet minim strip steak short loin, dolore porchetta beef pork belly frankfurter turkey velit ribeye doner sed sint laboris. In short loin shankle quis turkey ut ea corned beef pork loin jerky. Frankfurter quis exercitation, sirloin cupidatat beef tail. Hamburger tail officia shank elit pork loin dolore irure shoulder bacon duis.
+                    </p>
+                </article>
+            </div>
+            <footer>
+                Copyright � 2014 - Transition Studios
+            </footer>
+        </div>
+
+
+        <!-- Begin Javacript -->
+        <script>
+            var REPEAT_TIME = 5000.0;
+            var currentImageIndex, images, bannerText;
+            var phrases = ["Transitions are neat!",
+                "My God, it's full of stars!",
+                "Animations and More!"];
+
+            window.onload = function () {
+                images = [
+                    document.getElementById("img1"),
+                    document.getElementById("img2"),
+                    document.getElementById("img3")];
+
+                bannerText = document.getElementById("bannerText");
+                currentImageIndex = 2;
+
+                //hide all but the active image
+                for (var i = 0; i < currentImageIndex; ++i)
+                    images[i].style.opacity = 0;
+
+                //start the image cross fading loop
+                //TODO...
+                
+            }
+
+        </script>
+    </body>
+</html>

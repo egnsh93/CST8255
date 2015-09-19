@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab 8 - Puzzle Chat</title>
+
+    <!-- Include required styles -->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="content">
+        <h3>Puzzle Chat</h3>
+        <div id="puzzleChat">
+            <!-- Puzzle area -->
+            <div id="puzzle">
+            </div>
+
+            <!-- Chat area-->
+            <div id="chat">
+                <h3>Messages</h3>
+                <div id="messages">
+
+                </div>
+                <div id="input">
+                    Send a message:
+                    <br />
+                    <input id="txtMessage" type="text" />
+                    <button id="btnSend" onclick="sendMessage();">Send</button>
+                </div>
+            </div>
+        </div>
+        <div id="error"></div>
+    </div>
+
+    <!-- Include required scripts -->
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <!-- Include chat application scripts -->
+    <script src="js/chat.js"></script>
+
+    <!-- Include puzzle scripts -->
+    <script src="js/puzzle.js"></script>
+
+    <!-- Include site specific scripts -->
+    <script src="js/custom.js"></script>
+
+    <!-- Template for messages -->
+    <script type="text/template" id="messageTemplate">
+        <div class="message">
+            <strong>[username] said: </strong>[message]
+        </div>
+    </script>
+
+</body>
+
+</html>
